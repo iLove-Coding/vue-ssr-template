@@ -35,11 +35,15 @@ export const createStore = () => new Vuex.Store({
     EDIT_TODO(state, todo) {
       const todos = state.todos;
       todos.splice(todos.indexOf(todo), 1);
-      state.todos = todo;
+      state.todos = todos;
       state.newToto = todo.body;
     },
-    REMOVE_TODO(state, todo) {
+    COMPLETE_TODO(state, todo) {
       todo.completed = !todo.completed;
+    },
+    REMOVE_TODO(state, todo) {
+      const todos = state.todos;
+      todos.splice(todos.indexOf(todo), 1);
     },
     CLEAR_TODO(state, todo) {
       state.newToto = '';
@@ -54,8 +58,10 @@ export const createStore = () => new Vuex.Store({
     getTodo({ commit }, todo) {
       commit('GET_TODO', todo);
     },
+    completeTodo({ commit }, todo) {
+      commit('COMPLETE_TODO', todo);
+    },
     addTodo({ commit }, todo) {
-      console.log('add todo');
       commit('ADD_TODO', todo);
     },
     editTodo({ commit }, todo) {

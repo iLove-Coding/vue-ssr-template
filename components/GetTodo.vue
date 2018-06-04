@@ -12,7 +12,6 @@
         this.$store.dispatch('getTodo', e.target.value)
       },
       addTodo() {
-        console.log('???');
         this.$store.dispatch('addTodo')
         this.$store.dispatch('clearTodo')
       }

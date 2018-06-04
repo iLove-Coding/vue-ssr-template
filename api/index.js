@@ -1,3 +1,6 @@
+/**
+ * 假装是一个接口
+ */
 export function fetchTodos() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

@@ -12,7 +12,6 @@
 
     export default {
       asyncData ({ store, route }) {
-        console.log('app async data run')
         // 触发 action 后，会返回 Promise
         return store.dispatch('fetchTodos')
       },
