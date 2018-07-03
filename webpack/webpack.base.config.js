@@ -6,19 +6,21 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
+const outputPath = path.resolve(__dirname, '../dist/server')
+const publicPath = path.resolve(__dirname, '../public')
 
 module.exports = {
   devtool: isProd
     ? false
     : '#cheap-module-source-map',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: outputPath,
     publicPath: '/dist/',
     filename: '[name].[chunkhash].js'
   },
   resolve: {
     alias: {
-      'public': path.resolve(__dirname, '../public')
+      'public': publicPath
     }
   },
   module: {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { fetchTodos } from '../api'
+import { fetchTodos } from '../../server/api'
 
 Vue.use(Vuex)
 
