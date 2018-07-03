@@ -2,7 +2,7 @@
 /**
  * 服务端入口文件，最后会被打包为 dist/vue-ssr-server-bundle.json
  */
-import { createApp } from '../app';
+import { createApp } from '../src/app';
 
 export default context => new Promise((resolve, reject) => {
   const { app, router, store } = createApp(context);
